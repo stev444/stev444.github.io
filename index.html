@@ -380,33 +380,6 @@
             ]
         };
 
-        // Calculate totals
-        function calculateTotals() {
-            let totalInvestment = 0;
-            let currentValue = 0;
-            let totalProfit = 0;
-            
-            portfolioData.stocks.forEach(stock => {
-                stock.positions.forEach(position => {
-                    if (position.status === "open") {
-                        totalInvestment += position.invested;
-                    }
-                });
-            });
-            
-            const returnPercent = ((currentValue - totalInvestment) / totalInvestment * 100).toFixed(2);
-            const growthAmount = portfolioData.currentCapital - portfolioData.startingCapital;
-            const growthPercentage = (growthAmount / portfolioData.startingCapital * 100).toFixed(2);
-            const weeklyGrowthRate = (growthPercentage / 12).toFixed(2);
-            
-            document.getElementById('totalInvestment').textContent = formatCurrency(totalInvestment);
-            document.getElementById('currentValue').textContent = formatCurrency(currentValue);
-            document.getElementById('totalProfit').textContent = formatCurrency(totalProfit);
-            document.getElementById('returnPercent').textContent = returnPercent;
-            document.getElementById('totalPortfolioValue').textContent = formatCurrency(currentValue);
-            document.getElementById('currentCapitalValue').textContent = formatCurrency(portfolioData.currentCapital);
-        }
-
         // Format currency
         function formatCurrency(amount) {
             return new Intl.NumberFormat('id-ID').format(amount);
@@ -525,7 +498,6 @@
 
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
-            calculateTotals();
             renderStockHoldings();
             renderTradingHistory();
             renderCapitalGrowthChart();
