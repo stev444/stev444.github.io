@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indonesia Stock Portfolio</title>
+    <title>LQ45 Stock Portfolio</title>
     <meta name="description" content="Track your Indonesian stock investments">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -91,12 +91,12 @@
             <div class="p-6">
                 <h2 class="text-xl font-semibold text-gray-800 mb-4">My Trading Strategy</h2>
                 <div class="prose max-w-none">
-                    <p>Welcome to my Indonesia stock portfolio tracker. I trade the Indonesian market using a <strong>trend following</strong> strategy, focusing on stocks with strong momentum and clear technical patterns.</p>
+                    <p>Welcome to my LQ45 stock portfolio tracker. I trade only LQ45 stocks using a <strong>trend following</strong> strategy, focusing on stocks which breaks 200 day high prices.</p>
                     <p>This portfolio will be actively managed for the next <strong>52 weeks</strong> (1 year), after which I'll evaluate performance and decide on continuation. My approach combines:</p>
                     <ul class="list-disc pl-5">
-                        <li>Technical analysis for entry/exit points</li>
-                        <li>Fundamental screening for quality stocks</li>
-                        <li>Risk management through position sizing</li>
+                        <li>No perfect entry/exit points</li>
+                        <li>No added fundamental nor technical. 100% following the trends</li>
+                        <li>Risk management through position sizing. Will add more position with calculated and educated risk</li>
                     </ul>
                     <p class="mt-2">All trades are executed on the Indonesia Stock Exchange (IDX) during regular trading hours.</p>
                 </div>
@@ -277,36 +277,25 @@
     <script>
         // Portfolio data structure
         const portfolioData = {
-            startingCapital: 200000000,
-            currentCapital: 125450000,
+            startingCapital: 216046582,
+            currentCapital: 198638310,
             capitalHistory: [
                 { week: 0, value: 200000000 },
-                { week: 1, value: 195000000 },
-                { week: 2, value: 197500000 },
-                { week: 3, value: 193000000 },
-                { week: 4, value: 190000000 },
-                { week: 5, value: 185000000 },
-                { week: 6, value: 182000000 },
-                { week: 7, value: 178000000 },
-                { week: 8, value: 175000000 },
-                { week: 9, value: 172000000 },
-                { week: 10, value: 168000000 },
-                { week: 11, value: 165000000 },
-                { week: 12, value: 125450000 }
+                { week: 1, value: 198638310 }
             ],
             stocks: [
                 {
                     id: 1,
-                    code: "BBCA",
-                    name: "Bank Central Asia",
+                    code: "PGEO",
+                    name: "Pertamina Geothermal Energy",
                     positions: [
                         {
                             positionId: 1,
-                            shares: 300,
-                            avgPrice: 7200,
-                            currentPrice: 9100,
+                            shares: 143,
+                            avgPrice: 1400,
+                            currentPrice: 1420,
                             exitPrice: 0,
-                            invested: 2160000,
+                            invested: 20050030,
                             currentValue: 2730000,
                             profitRp: 570000,
                             profitPercent: 26.39,
