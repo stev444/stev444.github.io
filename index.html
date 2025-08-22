@@ -65,14 +65,6 @@
                     <div>
                         <div class="space-y-4">
                             <div>
-                                <p class="text-sm text-gray-600">Growth Amount</p>
-                                <p class="text-2xl font-bold text-loss">-Rp <span id="growthAmount">74,550,000</span></p>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-600">Growth Percentage</p>
-                                <p class="text-2xl font-bold text-loss">-<span id="growthPercentage">37.28</span>%</p>
-                            </div>
-                            <div>
                                 <p class="text-sm text-gray-600">Time Period</p>
                                 <p class="text-xl font-bold">12 weeks</p>
                             </div>
@@ -296,9 +288,6 @@
                             currentPrice: 1420,
                             exitPrice: 0,
                             invested: 20050030,
-                            currentValue: 2730000,
-                            profitRp: 570000,
-                            profitPercent: 26.39,
                             status: "open"
                         },
                         {
@@ -308,9 +297,6 @@
                             currentPrice: 9100,
                             exitPrice: 0,
                             invested: 1460000,
-                            currentValue: 1820000,
-                            profitRp: 360000,
-                            profitPercent: 24.66,
                             status: "open"
                         }
                     ]
@@ -327,9 +313,6 @@
                             currentPrice: 3800,
                             exitPrice: 0,
                             invested: 3450000,
-                            currentValue: 3800000,
-                            profitRp: 350000,
-                            profitPercent: 10.14,
                             status: "open"
                         }
                     ]
@@ -346,9 +329,6 @@
                             currentPrice: 5250,
                             exitPrice: 0,
                             invested: 900000,
-                            currentValue: 1050000,
-                            profitRp: 150000,
-                            profitPercent: 16.67,
                             status: "open"
                         }
                     ]
@@ -413,8 +393,6 @@
                 stock.positions.forEach(position => {
                     if (position.status === "open") {
                         totalInvestment += position.invested;
-                        currentValue += position.currentValue;
-                        totalProfit += position.profitRp;
                     }
                 });
             });
@@ -430,8 +408,6 @@
             document.getElementById('returnPercent').textContent = returnPercent;
             document.getElementById('totalPortfolioValue').textContent = formatCurrency(currentValue);
             document.getElementById('currentCapitalValue').textContent = formatCurrency(portfolioData.currentCapital);
-            document.getElementById('growthAmount').textContent = formatCurrency(Math.abs(growthAmount));
-            document.getElementById('growthPercentage').textContent = Math.abs(growthPercentage);
         }
 
         // Format currency
@@ -469,9 +445,6 @@
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rp ${formatCurrency(position.currentPrice)}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${position.exitPrice > 0 ? 'Rp ' + formatCurrency(position.exitPrice) : '-'}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rp ${formatCurrency(position.invested)}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rp ${formatCurrency(position.currentValue)}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm ${position.profitRp >= 0 ? 'text-profit' : 'text-loss'}">${position.profitRp >= 0 ? '+' : ''}Rp ${formatCurrency(position.profitRp)}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm ${position.profitPercent >= 0 ? 'text-profit' : 'text-loss'}">${position.profitPercent >= 0 ? '+' : ''}${position.profitPercent}%</td>
                     `;
                     
                     tableBody.appendChild(row);
